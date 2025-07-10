@@ -1,0 +1,71 @@
+.todo-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #1f1b2e;
+  padding: 25px 20px;
+  border-radius: 12px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.todo-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2a273f;
+  color: white;
+}
+
+.input-area button {
+  background-color: #a162e8;
+  border: none;
+  padding: 10px 14px;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.input-area button:hover {
+  background-color: #8f4dde;
+}
+
+.task {
+  background-color: #6a5acd;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.task .actions button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.task .actions button:hover {
+  opacity: 0.7;
+}
