@@ -5,6 +5,7 @@ const TodoApp = () => {
   const [task, setTask] = useState('');
   const [tasks, setTasks] = useState([]);
   const [editingIndex, setEditingIndex] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleAddTask = () => {
     if (!task.trim()) return;
@@ -30,9 +31,14 @@ const TodoApp = () => {
     setTasks(tasks.filter((_, i) => i !== index));
   };
 
+  const filteredTasks = tasks.filter((t) =>
+    t.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="todo-container">
-      <h2>Get Things Done !</h2>
+      <h2>Get Things Done!</h2>
+
       <div className="input-area">
         <input
           type="text"
@@ -40,24 +46,36 @@ const TodoApp = () => {
           value={task}
           onChange={(e) => setTask(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              handleAddTask();
-            }
+            if (e.key === 'Enter') handleAddTask();
           }}
         />
         <button onClick={handleAddTask}>
           {editingIndex !== null ? 'Update' : 'Add Task'}
         </button>
       </div>
-      {tasks.map((t, index) => (
-        <div className="task" key={index}>
-          <span>{t}</span>
-          <div className="actions">
-            <button onClick={() => handleEdit(index)}>✏️</button>
-            <button onClick={() => handleDelete(index)}>🗑️</button>
+
+      <div className="search-area">
+        <input
+          type="text"
+          placeholder="Search tasks..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+
+      {filteredTasks.length > 0 ? (
+        filteredTasks.map((t, index) => (
+          <div className="task" key={index}>
+            <span>{t}</span>
+            <div className="actions">
+              <button onClick={() => handleEdit(tasks.indexOf(t))}>✏️</button>
+              <button onClick={() => handleDelete(tasks.indexOf(t))}>🗑️</button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      ) : (
+        <p className="no-tasks">No matching tasks found.</p>
+      )}
     </div>
   );
 };

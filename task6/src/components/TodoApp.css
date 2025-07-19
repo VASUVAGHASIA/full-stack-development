@@ -46,6 +46,21 @@
   background-color: #8f4dde;
 }
 
+/* Search Bar */
+.search-area {
+  margin-bottom: 20px;
+}
+
+.search-area input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2a273f;
+  color: white;
+}
+
 .task {
   background-color: #6a5acd;
   padding: 10px 14px;
@@ -68,4 +83,11 @@
 
 .task .actions button:hover {
   opacity: 0.7;
+}
+
+/* No Task Message */
+.no-tasks {
+  text-align: center;
+  color: #ccc;
+  margin-top: 20px;
 }
