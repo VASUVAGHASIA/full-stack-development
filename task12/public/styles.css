@@ -1,0 +1,110 @@
+:root{
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --text: #0f1724;
+  --muted: #5b6670;
+  --primary: #2563eb; /* nice blue */
+  --accent: #7c3aed;  /* purple accent */
+  --success: #16a34a;
+  --danger: #dc2626;
+  --round: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #ffffff);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+/* Calculator container */
+.calc-container{
+  width:100%;
+  max-width:480px;
+  background:var(--card);
+  padding:26px;
+  border-radius:18px;
+  box-shadow: 0 10px 30px rgba(15,23,36,0.08);
+  text-align:center;
+}
+
+/* Titles */
+h1{font-size:1.6rem;margin-bottom:6px}
+.subtitle{color:var(--muted);margin-bottom:18px}
+
+/* Form */
+.calc-form{display:grid;gap:12px;text-align:left}
+.calc-form label{display:block;font-weight:600;color:var(--text);font-size:0.95rem}
+.calc-form input[type="text"],
+.calc-form select{
+  width:100%;
+  padding:12px 14px;
+  margin-top:6px;
+  font-size:1rem;
+  border:1px solid #e6e9ee;
+  border-radius:var(--round);
+  background:#fbfdff;
+  transition:box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.calc-form input:focus,
+.calc-form select:focus{
+  outline:none;
+  border-color:var(--primary);
+  box-shadow:0 6px 18px rgba(37,99,235,0.12);
+}
+
+/* Buttons */
+.actions{display:flex;gap:10px;margin-top:6px}
+.btn{
+  padding:10px 14px;
+  border-radius:10px;
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+  font-size:0.98rem;
+}
+.btn-primary{
+  flex:1;
+  color:white;
+  background: linear-gradient(90deg,var(--primary),var(--accent));
+  box-shadow: 0 8px 18px rgba(37,99,235,0.18);
+}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-secondary{
+  background:#eef1f6;
+  color:var(--text);
+  padding:10px 14px;
+  border-radius:10px;
+}
+
+/* Messages */
+#message{margin-top:14px;min-height:22px;font-weight:600}
+.message.error{color:var(--danger)}
+.message.success{color:var(--success)}
+
+/* Result card */
+.result-card{
+  margin-top:18px;
+  padding:14px;
+  border-radius:12px;
+  background:#f8fafc;
+  border:1px solid #e6eef9;
+}
+.result-card h2{margin:0 0 6px 0;font-size:1.1rem}
+#resultText{font-size:1.25rem;font-weight:800;color:var(--text)}
+
+/* Footer */
+.footer{margin-top:16px;color:var(--muted);font-size:0.9rem}
+
+/* Responsive */
+@media (max-width:420px){
+  .calc-container{padding:18px}
+  .actions{flex-direction:column}
+  .btn-primary{width:100%}
+}
