@@ -7,22 +7,28 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1.6;
+    color: #222;
 }
 
 .container {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-    padding: 2rem;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    width: 92%;
+    max-width: 650px;
+    padding: 2.5rem;
     margin: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-4px);
 }
 
 /* Header Styles */
@@ -32,14 +38,15 @@ header {
 }
 
 header h1 {
-    color: #333;
-    font-size: 2.5rem;
+    color: #2c3e50;
+    font-size: 2.6rem;
     margin-bottom: 0.5rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 header p {
-    color: #666;
+    color: #7f8c8d;
     font-size: 1.1rem;
 }
 
@@ -47,7 +54,7 @@ header p {
 .tax-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.75rem;
 }
 
 .form-group {
@@ -57,38 +64,40 @@ header p {
 
 .form-group label {
     font-weight: 600;
-    color: #333;
-    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.6rem;
     font-size: 1rem;
 }
 
 .form-group input {
-    padding: 0.75rem;
-    border: 2px solid #e1e5e9;
-    border-radius: 8px;
+    padding: 0.9rem;
+    border: 2px solid #dcdfe3;
+    border-radius: 10px;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
-    background: #f8f9fa;
+    transition: all 0.3s ease;
+    background: #f4f6f8;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #667eea;
-    background: white;
+    border-color: #3498db;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
 }
 
 .form-group input::placeholder {
-    color: #999;
+    color: #aaa;
 }
 
 /* Error Message */
 .error-message {
-    background: #fee;
-    color: #c33;
-    padding: 0.75rem;
-    border-radius: 8px;
-    border-left: 4px solid #c33;
+    background: #ffeaea;
+    color: #d63031;
+    padding: 0.9rem;
+    border-radius: 10px;
+    border-left: 5px solid #d63031;
     font-weight: 500;
+    margin-top: -0.5rem;
 }
 
 /* Button Styles */
@@ -100,9 +109,9 @@ header p {
 }
 
 .btn {
-    padding: 0.75rem 2rem;
+    padding: 0.85rem 2.2rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -113,47 +122,53 @@ header p {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(52, 152, 219, 0.4);
 }
 
 .btn-secondary {
-    background: #6c757d;
+    background: #95a5a6;
     color: white;
 }
 
 .btn-secondary:hover {
-    background: #5a6268;
-    transform: translateY(-2px);
+    background: #7f8c8d;
+    transform: translateY(-3px);
 }
 
 /* Result Card Styles */
 .result-card {
-    background: #f8f9fa;
-    border-radius: 12px;
+    background: #f9fafb;
+    border-radius: 15px;
     padding: 2rem;
     margin-bottom: 2rem;
-    border: 1px solid #e9ecef;
+    border: 1px solid #e1e4e8;
+    transition: box-shadow 0.3s ease;
+}
+
+.result-card:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 .result-card h2 {
-    color: #333;
+    color: #2c3e50;
     margin-bottom: 1.5rem;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .result-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #e9ecef;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .result-item:last-child {
@@ -162,21 +177,21 @@ header p {
 
 .result-item .label {
     font-weight: 600;
-    color: #495057;
+    color: #34495e;
     font-size: 1.1rem;
 }
 
 .result-item .value {
     font-weight: 700;
-    color: #333;
+    color: #2c3e50;
     font-size: 1.2rem;
 }
 
 .result-item.total {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    margin: 1rem -1rem -1rem -1rem;
-    padding: 1.5rem 2rem;
-    border-radius: 0 0 12px 12px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    margin: 1.2rem -1.2rem -1.2rem -1.2rem;
+    padding: 1.6rem 2rem;
+    border-radius: 0 0 15px 15px;
 }
 
 .result-item.total .label,
@@ -187,26 +202,26 @@ header p {
 
 .result-divider {
     height: 2px;
-    background: #dee2e6;
-    margin: 1rem 0;
+    background: #dfe4ea;
+    margin: 1.2rem 0;
 }
 
 /* Actions */
 .actions {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 2.2rem;
 }
 
 /* Footer */
 footer {
     text-align: center;
     margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e9ecef;
+    padding-top: 1.2rem;
+    border-top: 1px solid #e1e4e8;
 }
 
 footer p {
-    color: #6c757d;
+    color: #95a5a6;
     font-size: 0.9rem;
 }
 
@@ -214,12 +229,12 @@ footer p {
 @media (max-width: 768px) {
     .container {
         width: 95%;
-        padding: 1.5rem;
-        margin: 1rem;
+        padding: 2rem;
+        margin: 1.2rem;
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .form-actions {
@@ -231,30 +246,30 @@ footer p {
     }
 
     .result-card {
-        padding: 1.5rem;
+        padding: 1.6rem;
     }
 
     .result-item.total {
-        margin: 1rem -1.5rem -1.5rem -1.5rem;
-        padding: 1.5rem;
+        margin: 1rem -1.6rem -1.6rem -1.6rem;
+        padding: 1.4rem;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 
     .container {
-        padding: 1rem;
+        padding: 1.2rem;
     }
 
     .result-card {
-        padding: 1rem;
+        padding: 1.2rem;
     }
 
     .result-item.total {
-        margin: 1rem -1rem -1rem -1rem;
-        padding: 1rem;
+        margin: 1rem -1.2rem -1.2rem -1.2rem;
+        padding: 1.2rem;
     }
 }
