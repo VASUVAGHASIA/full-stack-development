@@ -1,0 +1,11 @@
+/* custom scrollbar hide */
+/* .scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; } */
+
+
+/* aspect ratio helper (if not using plugin) */
+/* .aspect-w-16 { position: relative; }
+.aspect-w-16 > * { position: absolute; inset: 0; } */
+
+
+/* small utility for gradients etc. */
